@@ -1,10 +1,10 @@
 import { render } from "react-dom";
-import Count from "./components/count";
-import classes from "./style.module.scss";
+import App from "./App";
+import { BrowserRouter } from "react-router-dom";
+
 render(
-  <div>
-    <Count />
-    <div className={classes.test}>TEST</div>
-  </div>,
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>,
   document.getElementById('root')
 )
