@@ -2,7 +2,6 @@ import { classNames } from "shared/lib/classNames/classNames"
 import cls from "./Button.module.scss";
 import { FC } from "react";
 
-
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   className?: string
 }
