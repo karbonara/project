@@ -33,11 +33,22 @@ export const buildLoaders = (options: BuildOptions): webpack.RuleSetRule[] => {
 
   };
   const typescriptLoader = {
-    test: /\.tsx?$/,
+    test: /\.(js|ts|tsx)$/,
     use: 'ts-loader',
     exclude: /node_modules/,
   };
+  const babelLoader = {
+    test: /\.m?js$/,
+    exclude: /node_modules/,
+    use: {
+      loader: "babel-loader",
+      options: {
+        presets: ['@babel/preset-env']
+      }
+    }
+  };
   return [
+    babelLoader,
     typescriptLoader,
     cssLoaders,
     svgLoader,
