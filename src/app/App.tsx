@@ -2,18 +2,22 @@ import { useTheme } from "./providers/ThemeProvider/lib/useTheme";
 import { classNames } from "../shared/lib/classNames/classNames";
 import { AppRouter } from "./providers/router";
 import { Navbar } from "widgets/Navbar";
-import './styles/index.scss';
 import { Sidebar } from "widgets/Sidebar";
+import { Suspense } from "react";
+import './styles/index.scss';
 
 const App = () => {
-  const { theme } = useTheme()
+  const { theme } = useTheme();
+
   return (
     <div className={classNames('app', { hovered: false }, [theme])}>
-      <Navbar />
-      <div className="content-page">
-        <Sidebar />
-        <AppRouter />
-      </div>
+      <Suspense fallback="">
+        <Navbar />
+        <div className="content-page">
+          <Sidebar />
+          <AppRouter />
+        </div>
+      </Suspense>
     </div>
   )
 }
