@@ -1,5 +1,4 @@
 import Loader from "shared/ui/Loader/Loader";
-import "./PageLoader.scss";
 
 const PageLoader = () => {
   return (
